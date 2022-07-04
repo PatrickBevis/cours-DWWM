@@ -86,3 +86,137 @@ for (const iterator of v2) {
     console.log(iterator)
     
 }
+
+// compte a rebours
+// let cpt = 10;
+
+// document.body.classList.add("text-center");
+// document.body.classList.add("p-5");
+// document.body.innerHTML = '<h1></h1>';
+// const handleInterval = setInterval(function(){
+//     document.querySelector('h1').innerHTML = cpt--;
+//     if(cpt == -1){
+//         clearInterval(handleInterval);
+//         document.body.innerHTML = '<img src="img/boom.png" alt="Boom !">'
+//     }
+// }, 1000);
+
+
+
+//Comment créer un élément HTML en JS (sans utiliser innerHTML) et l'ajouter à la fin d'un élément ?
+//13. Recréer en javascript l'élément ul.nav et l'ajouter au début du footer
+
+
+let ul_elt = document.createElement('ul');
+ul_elt.classList.add("nav", "nav-pills", "flex-column");
+
+let list_item = document.createElement('li');
+list_item.classList.add("nav-item");
+ul_elt.append(list_item);
+
+let link1 = document.createElement('a');
+link1.classList.add("nav-link", "active");
+link1.setAttribute('href','#');
+link1.innerText="active";
+list_item.append(link1);
+
+let list_item2 = document.createElement('li');
+list_item2.classList.add("nav-item");
+ul_elt.append(list_item2);
+
+let link2 = document.createElement('a');
+link2.classList.add("nav-link");
+link2.setAttribute('href','#');
+link2.innerText="link";
+list_item2.append(link2);
+
+let list_item3 = document.createElement('li');
+list_item3.classList.add("nav-item");
+ul_elt.append(list_item3);
+
+let link3 = document.createElement('a');
+link3.classList.add("nav-link", "disabled");
+link3.setAttribute('href','#');
+link3.innerText="disabled";
+list_item3.append(link3);
+
+
+
+console.log(ul_elt)
+
+//Comment créer un élément HTML en JS (sans utiliser innerHTML) et l'ajouter au début d'un élément ?
+//13-bis. Recréer en javascript l'élément ul.nav et l'ajouter à la fin du footer
+footer.append(ul_elt)
+//Comment dupliquer un élément HTML en JS pour l'ajouter au document HTML ?
+//14. Dupliquer l'élément ul.nav pour l'ajouter au footer
+let ul_elt_bis = ul_elt.cloneNode(true);
+footer.prepend(ul_elt_bis)
+//Comment remplacer un élément par un autre ?
+//15. Remplacer chaque paragraphe "Some text ..." par un h6 contenant le text "Lorem ipsum ..."
+
+//Comment ajouter un élément avant ou après un autre élément ?
+//16. Créer en JS une div.article qui va servir de container pour chaque article (h2 h5 div.fakeimg p p)
+
+//17. Dupliquer le premier article, en modifier la date puis l'ajouter à la fin du div.col-sm-8 qui contient tous les articles
+
+//18. Dupliquer le premier article, en modifier la date puis pour l'ajouter au début du div.col-sm-8 qui contient tous les articles
+
+//Comment supprimer un élément définitivement ?
+//18. Supprimer le 2ème ul.nav du footer
+
+//19. Supprimer le 1er ul.nav du footer mais le garder en mémoire pour le remettre dans le footer au bout de 5 secondes
+
+//20. Réaliser un tirage au sort de l'euromillions
+//Commencer par écrire les composant HTML/CSS qui serviront à afficher une boule et une étoile
+
+///BONUS///
+// let boulesNum
+// let boulesEto
+
+// function getRandom(min, max) {
+//     return Math.round(Math.random() * (max - min) + min)
+    
+    
+// }
+
+
+
+// for (int i = 1; i <=49; i++)
+// {
+//     boulesNum.Add(i);
+// }
+
+// for (int i = 1; i <=12; i++)
+// {
+//     boulesEto.Add(i);
+// }
+
+// string numbers= "";
+// string stars= "";
+
+// for (int i = 0; i < 5; i++)
+// {
+//     int index= random.Next(0, boulesNum.Count);
+//     numbers +=index + " ";
+//    // Console.WriteLine($"Numero: {boulesNum[index]}");
+// boulesNum.Remove(boulesNum[index]);
+
+// }
+
+// Console.WriteLine("Numéros: ");
+// Console.WriteLine("");
+// Console.WriteLine(numbers);
+// Console.WriteLine("");
+
+// for (int i = 0; i < 2; i++)
+// {
+//     int index= random.Next(0, boulesEto.Count);
+//     stars +=index + " ";
+//    // Console.WriteLine($"Numero: {boulesNum[index]}");
+// boulesEto.Remove(boulesEto[index]);
+// }
+
+// Console.WriteLine("Etoiles: ");
+// Console.WriteLine("");
+// Console.WriteLine(stars);
+// Console.WriteLine("");
