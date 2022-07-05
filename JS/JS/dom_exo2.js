@@ -152,7 +152,7 @@ footer.append(ul_elt)
 let ul_elt_bis = ul_elt.cloneNode(true);
 footer.prepend(ul_elt_bis)
 //Comment remplacer un élément par un autre ?
-//15. Remplacer chaque paragraphe "Some text ..." par un h6 contenant le text "Lorem ipsum ..."
+//15. Remplacer chaque paragraphe "Some text .." par un h6 contenant le text "Lorem ipsum ..."
 // let firstP =document.getElementsByTagName("p");
 // let newH6 = document.createElement("h6");
 // newH6.innerText = "Lorem ipsum"
@@ -175,21 +175,41 @@ let h5_div_article1 = div_article1.getElementsByTagName("h5");
 let fakeimg_div_article1 = div_article1.getElementsByClassName("fakeimg");
 let p_div_article1 = div_article1.getElementsByTagName("p");
 div_article1.append(div_article_container)
-div_article_container.append(h2_div_article1[0],h5_div_article1[0],fakeimg_div_article1[0],p_div_article1[0],p_div_article1[1]);
+div_article_container.append(h2_div_article1,h5_div_article1,fakeimg_div_article1,p_div_article1[0],p_div_article1[1]);
 
 
 console.log(div_article_container);
 
 //17. Dupliquer le premier article, en modifier la date puis l'ajouter à la fin du div.col-sm-8 qui contient tous les articles
-let div_article_container
+let div_article_container_bis = div_article_container.cloneNode(true)
+div_article_container_bis.getElementsByTagName("h5").innerText = "Title description, Juil 5, 2022"
+div_article1.append(div_article_container_bis)
+
+console.log(div_article_container_bis)
+
+
 //18. Dupliquer le premier article, en modifier la date puis pour l'ajouter au début du div.col-sm-8 qui contient tous les articles
 
+
+
+
 //Comment supprimer un élément définitivement ?
-//18. Supprimer le 2ème ul.nav du footer
+//19. Supprimer le 2ème ul.nav du footer
+footer =document.querySelector("footer")
+let ulCollection = footer.querySelectorAll("ul");
+let secondUl = ulCollection[1];
+secondUl.remove();
 
-//19. Supprimer le 1er ul.nav du footer mais le garder en mémoire pour le remettre dans le footer au bout de 5 secondes
+//20. Supprimer le 1er ul.nav du footer mais le garder en mémoire pour le remettre dans le footer au bout de 5 secondes
 
-//20. Réaliser un tirage au sort de l'euromillions
+let firstUl =ulCollection[0]
+firstUl.remove();
+
+setTimeout(function(){
+    footer.append(firstUl);
+},5000)
+
+//21. Réaliser un tirage au sort de l'euromillions
 //Commencer par écrire les composant HTML/CSS qui serviront à afficher une boule et une étoile
 
 ///BONUS///

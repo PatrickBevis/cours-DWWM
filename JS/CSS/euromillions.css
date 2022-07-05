@@ -1,0 +1,25 @@
+.number-template{
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/circle.png);
+    background-size: 200px;
+    
+}
+
+.number{
+    font-size: 72px;
+    padding-top:36px;
+}
+
+
+.star-template{
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/circle.png);
+    background-size: 200px;
+}
+
+.star{
+    font-size: 72px;
+    padding-top:72px;
+}
