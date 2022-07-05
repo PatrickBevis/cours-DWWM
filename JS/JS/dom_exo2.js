@@ -153,12 +153,35 @@ let ul_elt_bis = ul_elt.cloneNode(true);
 footer.prepend(ul_elt_bis)
 //Comment remplacer un élément par un autre ?
 //15. Remplacer chaque paragraphe "Some text ..." par un h6 contenant le text "Lorem ipsum ..."
-
+// let firstP =document.getElementsByTagName("p");
+// let newH6 = document.createElement("h6");
+// newH6.innerText = "Lorem ipsum"
+// for (const item of firstP) {
+//     if (item.innerText ==="Some text..") {
+//         let newH6_bis = newH6.cloneNode(true)
+//         item.replaceWith(newH6_bis)
+//     }
+// }
+// console.log(newH6)
 //Comment ajouter un élément avant ou après un autre élément ?
 //16. Créer en JS une div.article qui va servir de container pour chaque article (h2 h5 div.fakeimg p p)
 
-//17. Dupliquer le premier article, en modifier la date puis l'ajouter à la fin du div.col-sm-8 qui contient tous les articles
+let div_article_container = document.createElement("div");
+div_article_container.className="article";
 
+let div_article1= document.querySelector(".col-sm-8")
+let h2_div_article1= div_article1.getElementsByTagName("h2");
+let h5_div_article1 = div_article1.getElementsByTagName("h5");
+let fakeimg_div_article1 = div_article1.getElementsByClassName("fakeimg");
+let p_div_article1 = div_article1.getElementsByTagName("p");
+div_article1.append(div_article_container)
+div_article_container.append(h2_div_article1[0],h5_div_article1[0],fakeimg_div_article1[0],p_div_article1[0],p_div_article1[1]);
+
+
+console.log(div_article_container);
+
+//17. Dupliquer le premier article, en modifier la date puis l'ajouter à la fin du div.col-sm-8 qui contient tous les articles
+let div_article_container
 //18. Dupliquer le premier article, en modifier la date puis pour l'ajouter au début du div.col-sm-8 qui contient tous les articles
 
 //Comment supprimer un élément définitivement ?
