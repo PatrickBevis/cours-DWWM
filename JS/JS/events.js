@@ -1,21 +1,22 @@
 //Exo 21
 //Créer un btn qui affiche un message dans la page au clic
 
-let button = document.querySelector('.btn')
-button.onclick = function(){
-    alert("Coucou");
+let button = document.querySelector('#button21')
+button.onclick = () => {
+    document.querySelector('#message').innerText ='hello World';
 }
 
 //Exo 22
 //Créer un formulaire avec un input[type="text"] et un btn
 //au clic sur le btn, afficher dans la page le texte saisi par l'utilisateur
-let afficher = document.getElementById("button22")
-let message = document.getElementById("text1")
+const afficher = document.getElementById("button22")
 
-afficher.onclick = function(){
 
-   alert(message.value);
+afficher.onclick = () => {
     
+    const text = document.getElementById("text1");
+    const message2= document.getElementById("message2");
+    message2.innerText = text.value;
 }
 
 
@@ -23,8 +24,16 @@ afficher.onclick = function(){
 //Exo 23
 //Créer un btn qui affiche/masque un texte dans la page
 
-
-
+const btn3 = document.getElementById("button23");
+btn3.onclick =(event)=>{
+    const message3 = document.getElementById("message3");
+    if(message3.hasAttribute("hidden")){
+        message3.removeAttribute("hidden");
+    } else{
+        message3.setAttribute("hidden", true)
+    }
+    
+}
 
 
 
@@ -35,16 +44,71 @@ afficher.onclick = function(){
 //admin/azerty
 //user/poiuyt
 
+let tbpseudo = ["admin","user"]
+let tbpassword= ["azerty","poiuyt"]
+
+const pseudo = document.getElementById("pseudo");
+const password = document.getElementById("mdp");
+const message4 = document.getElementById("message4");
+const btn4 = document.getElementById("button24");
+
+btn4.onclick = () => {
+    for (let i = 0; i < tbpseudo.length; i++) {
+    
+        if(pseudo.value === tbpseudo[i] && password.value ===tbpassword[i]){
+            message4.innerText = `Bienvenue ${pseudo.value}`;
+            break;
+        }if (pseudo.value === tbpseudo[i] && password.value !=tbpassword[i]){
+            message4.innerText = "Mot de passe foireux";
+            message4.style.color ="red"
+            break;
+        }if (pseudo.value!= tbpseudo[i] && password.value ===tbpassword[i]){
+            message4.innerText = "Vous etes qui vous ?";
+            break;
+    }else{
+            message4.innerText = "Pas bon !";
+
+        }
+     }
+    }
+
+
+
+
+
+
 
 //Exo 25 : créer un bouton qui disparaît quand on clic dessus
 
+const btn5 =  document.getElementById("button25").onclick = (event) => {
+event.currentTarget.setAttribute("hidden", true)
+};
+
+
 //Exo 26 : créer un formulaire avec un input[type="text"] un bouton et un select
 //au clic sur le bouton, récupérer le texte saisi dans l'input, si le texte saisi n'est pas vide l'ajouter alors en option dans le select
+
+document.getElementById("button26").onclick = (evt) => {
+    evt.preventDefault();
+    const saisie = document.getElementById("input1").value;
+    if(saisie != "" && saisie.trim() != ""){
+        const option = document.createElement('option');
+        option.value = saisie;
+        option.innerText = saisie;
+        document.getElementById("select").append(option);
+    }
+    document.getElementById("input1").value = "";
+}
+
 
 //Exo 27 : créer un formulaire avec un input[type="text"] et un bouton
 //au clic sur le bouton, récupérer le texte saisi dans l'input et vérifier que ce texte contient au moins 6 caractères
 //dont au moins une minuscule et une majuscule
 //si ça n'est pas le cas afficher un message d'indication à l'utilisateur
+
+
+
+
 
 //Exo 28 : créer 2 select
 //Dans le 1er select insérer les options "Fruits" et "Légumes"
